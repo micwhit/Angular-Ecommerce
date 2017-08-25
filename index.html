@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/mediaquery.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="StoreController as store">
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+
+    <script src="scripts/Store.js"></script>
+    <script src="scripts/directives.js"></script>
+    <script src="scripts/routes.js"></script>
+    <script src="scripts/services.js"></script>
+
+    <div class="header-wrapper">
+        <header class="clearfix">
+            <div class="logo col col-1-3"><img src="img/ctlogosmall.png" /></div>
+            <nav class="menu col col-2-3">
+                <ul class="clearfix">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sale</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Account</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <section id="mainContent" class="clearfix">
+        <aside id="filterSection" class="col col-1-5"  ng-controller="FilterController as filter">
+            <section class="filter">
+                <header class="filter-header">
+                    <h2 class="filter-title">Colors</h2>
+                </header>
+                <article class="filter-options">
+                    <ul class="clearfix">
+                        <li ng-repeat="sortCol in filter.filterColors">
+                            <product-color></product-color>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+            <section class="filter">
+                <header class="filter-header">
+                    <h2 class="filter-title">Shirt Size</h2>
+                </header>
+                <article class="filter-options">
+                    <ul class="clearfix">
+                        <li ng-repeat="sortSiz in filter.filterSize">
+                            <product-size></product-size>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+            <section class="filter">
+                <header class="filter-header">
+                    <h2 class="filter-title">Price Range</h2>
+                </header>
+                <article class="filter-options">
+                    <select id="ddlPriceRange" ng-model="priceRange" ng-change="filter.priceRangeChange()">
+                        <option value="">-- Select --</option>
+                        <option value="0-49.99"> $0 - $49.99</option>
+                        <option value="50-99.99"> $50 - $99.99</option>
+                        <option value="100-149.99"> $100 - $149.99</option>
+                        <option value="150-199.99"> $150 - $199.99</option>
+                    </select>
+                </article>
+            </section>
+        </aside>
+
+        <section id="productSection" class="col col-4-5" >
+            <article class="product col col-1-4" ng-repeat="product in store.products">
+                <product-template product="product" store="store"></product-template>
+
+                <div ng-repeat="reviews in product.reviews">
+                    <h3>Stars: {{reviews.stars}}</h3>
+                    <h3>Body: {{reviews.body}}</h3>
+                    <h3>Author: {{reviews.author}}</h3>
+                </div>
+
+                <product-review product="prod"></product-review>
+
+            </article>
+        </section>
+    </section>
+
+    <div id="popup" class="popup-wrapper">
+        <div class="popup-overlay" ng-click="store.closePopup()"></div>
+        <div class="popup-maincontent">
+            <article class="popup-product">
+                <product-template product="store.overviewProduct"></product-template>
+            </article>
+            <img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/close_window.png" class="popup-close" ng-click="store.closePopup()" />
+        </div>
+    </div>
+
+</body>
+</html>

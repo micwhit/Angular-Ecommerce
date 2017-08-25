@@ -1,0 +1,79 @@
+﻿[
+  {
+    "imageURL": "img/shirt.jpg",
+    "productname": "nice shirt",
+    "price": 8,
+    "color": [ "grey", "black" ],
+    "shirtsize": [ "small", "large" ],
+    "canoverview": false,
+    "colortab": 1,
+    "shirtsizetab": 1,
+    "reviews": [
+      {
+        "stars": 5,
+        "body": "best show",
+        "author": "mw@abc.com"
+      }
+    ]
+  },
+  {
+    "imageURL": "img/shirt1.jpg",
+    "productname": "my shirt",
+    "price": 18,
+    "color": [ "white", "pink" ],
+    "shirtsize": [ "medium", "large" ],
+    "canoverview": false,
+    "colortab": 1,
+    "shirtsizetab": 1,
+    "reviews": [
+      {
+        "stars": 3,
+        "body": "best show",
+        "author": "mw@abc.com"
+      }]
+  },
+  {
+    "imageURL": "img/shirt3.jpg",
+    "productname": "ice shirt",
+    "price": 8,
+    "color": [ "pink", "black" ],
+    "shirtsize": [ "large" ],
+    "canoverview": false,
+    "colortab": 1,
+    "shirtsizetab": 1,
+    "reviews": [ ]
+  },
+  {
+    "imageURL": "img/shirt4.jpg",
+    "productname": "price shirt",
+    "price": 80,
+    "color": [ "grey", "pink" ],
+    "shirtsize": [ "medium" ],
+    "canoverview": false,
+    "colortab": 1,
+    "shirtsizetab": 1,
+    "reviews": [ ]
+  },
+  {
+    "imageURL": "img/shirt5.jpg",
+    "productname": "cool shirt",
+    "price": 120,
+    "color": [ "black" ],
+    "shirtsize": [ "large" ],
+    "canoverview": false,
+    "colortab": 1,
+    "shirtsizetab": 1,
+    "reviews": [ ]
+  },
+  {
+    "imageURL": "img/shirt6.jpg",
+    "productname": "fresh shirt",
+    "price": 176,
+    "color": [ "white" ],
+    "shirtsize": [ "small" ],
+    "canoverview": false,
+    "colortab": 1,
+    "shirtsizetab": 1,
+    "reviews": [ ]
+  }
+]
